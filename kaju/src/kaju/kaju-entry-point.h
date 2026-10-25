@@ -1,16 +1,16 @@
 #pragma once
 
 #include <iostream>
-#include "Application.h"
 
 #ifdef KAJU_PLATFORM_WINDOWS
 
 extern kaju::Application* CreateApplication();
+
 int main() {
-	std::cout << "we are in the main\n";
-	auto app = CreateApplication();
-	app->run();
-	delete app;
+	kaju::Log::init();
+	auto APP = CreateApplication();
+	APP->Run();
+	delete APP;
 }
 
 #else

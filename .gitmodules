@@ -1,0 +1,9 @@
+[submodule "kaju/vendor/spdlog"]
+	path = kaju/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "kaju/vendor/glfw"]
+	path = kaju/vendor/glfw
+	url = http://github.com/glfw/glfw
+[submodule "kaju/vendor/GLFW"]
+	path = kaju/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

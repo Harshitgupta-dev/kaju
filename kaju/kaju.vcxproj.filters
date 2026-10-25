@@ -1,36 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="platforms">
+      <UniqueIdentifier>{FDCC2FD5-6937-E44B-B275-95F11E1FC2A0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="src\kaju">
+      <UniqueIdentifier>{478632CF-3353-8DDA-5C6C-7B824898C268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\kaju\events">
+      <UniqueIdentifier>{6B90BC94-D71B-2A59-E02C-AD4D4C378659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src-app">
+      <UniqueIdentifier>{3BD22EA9-A7B1-AD44-B0C9-381B1C2814A6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\kaju\core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\kaju\Application.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="platforms\WindowsWindow.h">
+      <Filter>platforms</Filter>
     </ClInclude>
     <ClInclude Include="src-app\kaju.h">
-      <Filter>Header Files</Filter>
+      <Filter>src-app</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\Application.h">
+      <Filter>src\kaju</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\Layer.h">
+      <Filter>src\kaju</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\LayerStack.h">
+      <Filter>src\kaju</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\Log.h">
+      <Filter>src\kaju</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\Window.h">
+      <Filter>src\kaju</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\core.h">
+      <Filter>src\kaju</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\events\Application-event.h">
+      <Filter>src\kaju\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\events\event.h">
+      <Filter>src\kaju\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\events\key-event.h">
+      <Filter>src\kaju\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\events\mouse-event.h">
+      <Filter>src\kaju\events</Filter>
     </ClInclude>
     <ClInclude Include="src\kaju\kaju-entry-point.h">
-      <Filter>Header Files</Filter>
+      <Filter>src\kaju</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kpch.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="platforms\WindowsWindow.cpp">
+      <Filter>platforms</Filter>
+    </ClCompile>
     <ClCompile Include="src\kaju\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>src\kaju</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kaju\Layer.cpp">
+      <Filter>src\kaju</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kaju\LayerStack.cpp">
+      <Filter>src\kaju</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kaju\Log.cpp">
+      <Filter>src\kaju</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kpch.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
