@@ -1,9 +1,20 @@
 //step 1 include kaju engine header file 
 #include <kaju.h>
 
+class exampleLayer : public kaju::Layer {
+public:
+	exampleLayer() : Layer("example") {}
+};
+
 //step 2 create a child class of application and override the onUpdate function 
 class sandbox : public kaju::Application {
 public:
+
+	sandbox() {
+		PushLayer(new exampleLayer);
+		PushOverlay(new kaju::ImGuiLayer);
+	}
+
 	void OnUpdate() override;
 };
 
@@ -15,6 +26,6 @@ kaju::Application* CreateApplication() {
 }
 	
 void sandbox::OnUpdate() {
-	m_Window->OnUpdate();
+	GetWindow().OnUpdate();
 }
 

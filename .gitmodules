@@ -7,3 +7,6 @@
 [submodule "kaju/vendor/GLFW"]
 	path = kaju/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "kaju/vendor/imgui"]
+	path = kaju/vendor/imgui
+	url = https://github.com/TheCherno/imgui

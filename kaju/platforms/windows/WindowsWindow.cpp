@@ -2,9 +2,9 @@
 #include "WindowsWindow.h"
 #include "GLFW/glfw3.h"
 
-#include "../src/kaju/events/Application-event.h"
-#include "../src/kaju/events/key-event.h"
-#include "../src/kaju/events/mouse-event.h"
+#include "kaju/events/Application-event.h"
+#include "kaju/events/key-event.h"
+#include "kaju/events/mouse-event.h"
 #include <glad/glad.h>
 
 namespace kaju {
@@ -30,12 +30,16 @@ namespace kaju {
 		}
 
 
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		KAJU_CORE_ASSERT(m_Window, "Window not created");
 
+		glfwMakeContextCurrent(m_Window);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		KAJU_CORE_ASSERT(status, "Failed to initialize GLAD");
-		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

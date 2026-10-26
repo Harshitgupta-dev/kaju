@@ -4,11 +4,17 @@
     <Filter Include="platforms">
       <UniqueIdentifier>{FDCC2FD5-6937-E44B-B275-95F11E1FC2A0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="platforms\windows">
+      <UniqueIdentifier>{57BC8C02-C3D2-8A98-0C4A-16BA789F5B20}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\kaju">
       <UniqueIdentifier>{478632CF-3353-8DDA-5C6C-7B824898C268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\kaju\ImGui">
+      <UniqueIdentifier>{B154EEB4-9D22-E2BA-86B6-52E17223BE1F}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\kaju\events">
       <UniqueIdentifier>{6B90BC94-D71B-2A59-E02C-AD4D4C378659}</UniqueIdentifier>
@@ -18,14 +24,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="platforms\WindowsWindow.h">
-      <Filter>platforms</Filter>
+    <ClInclude Include="platforms\windows\WindowsWindow.h">
+      <Filter>platforms\windows</Filter>
     </ClInclude>
     <ClInclude Include="src-app\kaju.h">
       <Filter>src-app</Filter>
     </ClInclude>
     <ClInclude Include="src\kaju\Application.h">
       <Filter>src\kaju</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kaju\ImGui\ImGuiLayer.h">
+      <Filter>src\kaju\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\kaju\Layer.h">
       <Filter>src\kaju</Filter>
@@ -62,11 +71,14 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="platforms\WindowsWindow.cpp">
-      <Filter>platforms</Filter>
+    <ClCompile Include="platforms\windows\WindowsWindow.cpp">
+      <Filter>platforms\windows</Filter>
     </ClCompile>
     <ClCompile Include="src\kaju\Application.cpp">
       <Filter>src\kaju</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kaju\ImGui\ImGuiLayer.cpp">
+      <Filter>src\kaju\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\kaju\Layer.cpp">
       <Filter>src\kaju</Filter>
@@ -80,5 +92,6 @@
     <ClCompile Include="src\kpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_opengl3.cpp" />
   </ItemGroup>
 </Project>

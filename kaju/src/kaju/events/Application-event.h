@@ -5,7 +5,7 @@ namespace kaju {
 
 
 	class KAJU_API WindowResizeEvent : public Event
-	{
+	{ 
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height)
 			: m_Width(width), m_Height(height) {

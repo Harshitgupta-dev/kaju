@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>kpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>GLFW_INCLUDE_NONE;KAJU_PLATFORM_WINDOWS;KAJU_BUILD_DLL;KAJU_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;.;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLFW_INCLUDE_NONE;KAJU_PLATFORM_WINDOWS;KAJU_BUILD_DLL;KAJU_ENABLE_ASSERT;KAJU_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;.;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -105,8 +105,8 @@ copy /B /Y ..\bin\debug-windows-x86_64\kaju\kaju.dll ..\bin\debug-windows-x86_64
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>kpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>GLFW_INCLUDE_NONE;KAJU_PLATFORM_WINDOWS;KAJU_BUILD_DLL;KAJU_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;.;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLFW_INCLUDE_NONE;KAJU_PLATFORM_WINDOWS;KAJU_BUILD_DLL;KAJU_ENABLE_ASSERT;KAJU_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;.;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -137,8 +137,8 @@ copy /B /Y ..\bin\release-windows-x86_64\kaju\kaju.dll ..\bin\release-windows-x8
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>kpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>GLFW_INCLUDE_NONE;KAJU_PLATFORM_WINDOWS;KAJU_BUILD_DLL;KAJU_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;.;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLFW_INCLUDE_NONE;KAJU_PLATFORM_WINDOWS;KAJU_BUILD_DLL;KAJU_ENABLE_ASSERT;KAJU_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;.;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -165,9 +165,10 @@ copy /B /Y ..\bin\dist-windows-x86_64\kaju\kaju.dll ..\bin\dist-windows-x86_64\s
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="platforms\WindowsWindow.h" />
+    <ClInclude Include="platforms\windows\WindowsWindow.h" />
     <ClInclude Include="src-app\kaju.h" />
     <ClInclude Include="src\kaju\Application.h" />
+    <ClInclude Include="src\kaju\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\kaju\Layer.h" />
     <ClInclude Include="src\kaju\LayerStack.h" />
     <ClInclude Include="src\kaju\Log.h" />
@@ -181,8 +182,12 @@ copy /B /Y ..\bin\dist-windows-x86_64\kaju\kaju.dll ..\bin\dist-windows-x86_64\s
     <ClInclude Include="src\kpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="platforms\WindowsWindow.cpp" />
+    <ClCompile Include="platforms\windows\WindowsWindow.cpp" />
     <ClCompile Include="src\kaju\Application.cpp" />
+    <ClCompile Include="src\kaju\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_opengl3.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\kaju\Layer.cpp" />
     <ClCompile Include="src\kaju\LayerStack.cpp" />
     <ClCompile Include="src\kaju\Log.cpp" />
@@ -196,6 +201,9 @@ copy /B /Y ..\bin\dist-windows-x86_64\kaju\kaju.dll ..\bin\dist-windows-x86_64\s
     </ProjectReference>
     <ProjectReference Include="vendor\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

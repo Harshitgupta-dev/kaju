@@ -2,7 +2,7 @@
 #include "kaju/core.h"
 #include <kpch.h>
 #include "GLFW/glfw3.h"
-#include "../src/kaju/Window.h"
+#include "kaju/Window.h"
 
 namespace kaju {
 	class KAJU_API WindowsWindow : public Window

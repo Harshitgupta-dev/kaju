@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kaju/events/event.h"
+#include "event.h"
 namespace kaju {
 
 	class KAJU_API MouseMovedEvent : public Event
